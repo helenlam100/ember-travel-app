@@ -3,6 +3,7 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'travel',
+    adapterURL: process.env.ADAPTER_URL,
     environment: environment,
     baseURL: '/',
     locationType: 'auto',

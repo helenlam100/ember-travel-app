@@ -1,0 +1,31 @@
+
+<h2>Welcome to Your Journal and Travel Page</h2>
+
+<div class="ui three column grid">
+  {{#each post in model}}
+  <div class="column">
+    <div class="ui segment">
+      <h1>{{post.name}}</h1>
+      <h1>{{post.description}}</h1>
+      <img {{bind-attr src=post.photo}} class="ui fluid image">
+
+      <button {{action "delete" post }}>Delete</button>
+      
+    </div>
+  </div>
+  {{/each}}
+</div>
+
+<br>
+<hr>
+
+<h2>Add a new travel post</h2>
+{{input value=newName placeholder="name"}}
+{{input value=newPhoto placeholder="photo url"}}
+{{input value=newDescription placeholder="description"}}
+
+<button {{action "create"}}>Submit</button>
+
+
+
+{{outlet}}
